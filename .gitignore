@@ -1,0 +1,53 @@
+.claude/
+
+# dependencies (root, frontend, backend)
+node_modules/
+/frontend/.pnp
+.pnp.*
+/frontend/.yarn/*
+!/frontend/.yarn/patches
+!/frontend/.yarn/plugins
+!/frontend/.yarn/releases
+!/frontend/.yarn/versions
+
+# ---------------------------------------------------------------- frontend
+
+# testing
+/frontend/coverage/
+
+# next.js
+/frontend/.next/
+/frontend/out/
+
+# production
+/frontend/build/
+
+# TikZ engine files, copied from node_modules on install (scripts/copy-tikzjax.mjs)
+/frontend/public/tikzjax/
+
+# typescript
+*.tsbuildinfo
+/frontend/next-env.d.ts
+
+# vercel
+.vercel
+
+# ---------------------------------------------------------------- backend
+
+/backend/dist/
+# documents and uploaded images (DATA_DIR)
+/backend/data/
+
+# ---------------------------------------------------------------- misc
+
+# env files (can opt-in for committing if needed)
+.env*
+
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*

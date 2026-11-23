@@ -1,0 +1,502 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ------------------------------------------------------------ paper editor */
+
+:root {
+  --comment-bg: oklch(0.95 0.08 95 / 70%);
+  --comment-active: oklch(0.88 0.15 90 / 85%);
+  --flash: oklch(0.9 0.12 250 / 60%);
+  --table-guide: oklch(0.55 0 0 / 55%);
+}
+
+.dark {
+  --comment-bg: oklch(0.55 0.1 90 / 30%);
+  --comment-active: oklch(0.6 0.13 90 / 55%);
+  --flash: oklch(0.45 0.12 250 / 60%);
+  --table-guide: oklch(0.7 0 0 / 50%);
+}
+
+/* Menus and dialogs (Radix) lock the page with inherited styles on body: pointer-events: none and a
+   custom property (react-remove-scroll-bar). Both would restyle every element of a long paper on each
+   open and close. The editor's scroll area keeps its own pointer-events, and while the page is locked
+   a cover takes its clicks, as pointer-events: none would. */
+@property --removed-body-scroll-bar-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+.paper-scroll {
+  pointer-events: auto;
+}
+
+body[data-scroll-locked] .paper-scroll::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+}
+
+/* Fonts, sizes and paragraph spacing come from the document format (paperFormatCss). */
+.paper-body {
+  @apply outline-none;
+  min-height: 12rem;
+}
+
+/* Not "* + *": with a sibling rule here Chrome restyles every element of the paper whenever a block is
+   added or removed. With :first-child below the spacing is the same. */
+.paper-body > * {
+  margin-top: 0.75em;
+}
+
+.paper-body > :first-child {
+  margin-top: 0;
+}
+
+.heading-number {
+  @apply mr-3 tabular-nums select-none;
+}
+
+.paper-body ul {
+  @apply list-disc pl-6;
+}
+
+.paper-body ol {
+  @apply list-decimal pl-6;
+}
+
+.paper-body li > p {
+  margin: 0.15em 0;
+}
+
+.paper-body blockquote {
+  @apply border-l-2 pl-4 text-muted-foreground;
+}
+
+.paper-body code {
+  @apply rounded bg-muted px-1 py-0.5 font-mono text-[0.85em];
+}
+
+.paper-body pre {
+  @apply overflow-x-auto rounded-md bg-muted p-3 font-mono text-sm leading-normal;
+}
+
+.paper-body pre code {
+  @apply bg-transparent p-0;
+}
+
+.paper-body a {
+  @apply text-primary underline underline-offset-2;
+}
+
+.paper-body hr {
+  @apply my-6 border-border;
+}
+
+.paper-body hr.ProseMirror-selectednode {
+  @apply border-primary;
+}
+
+/* Where the appendix starts (AppendixBreak). Like LaTeX's \appendix it prints nothing. */
+.paper-body .appendix-break {
+  @apply my-6 flex cursor-default items-center gap-3 font-sans text-xs font-medium tracking-wide text-muted-foreground select-none;
+  text-indent: 0;
+}
+
+.paper-body .appendix-break::before,
+.paper-body .appendix-break::after {
+  content: "";
+  @apply flex-1 border-t border-dashed border-current opacity-50;
+}
+
+.paper-body .appendix-break.ProseMirror-selectednode {
+  @apply text-primary;
+}
+
+/* Placeholder (TipTap Placeholder extension) */
+.paper-body .is-empty::before {
+  content: attr(data-placeholder);
+  @apply pointer-events-none float-left h-0 font-sans text-muted-foreground/60;
+}
+
+/* In an empty numbered heading the placeholder would start at the line start, over the number. With
+   the number floated, the placeholder (out of the flow) starts after it, where the caret is. */
+.paper-body .is-empty > .heading-number {
+  float: left;
+}
+
+.paper-body .is-empty:has(> .heading-number)::before {
+  position: absolute;
+  float: none;
+}
+
+/* Math */
+.equation-node .katex-display {
+  margin: 0.25em 0;
+}
+
+.math-inline .katex {
+  font-size: 1.05em;
+}
+
+/* TikZ figures (nodes/tikz-svg.tsx): their natural size, shrunk to fit, or a % of the text width */
+.tikz-svg {
+  max-width: 100%;
+}
+
+.tikz-svg svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.tikz-svg-scaled svg {
+  width: 100%;
+}
+
+/* Tables (inside table figures) */
+.paper-body table {
+  @apply mx-auto w-auto border-collapse text-[0.95em];
+  border-top: 1.5px solid var(--foreground);
+  border-bottom: 1.5px solid var(--foreground);
+}
+
+.paper-body th,
+.paper-body td {
+  @apply relative px-3 py-1.5 align-top;
+}
+
+/* Columns without a set width (not resized or imported) keep a comfortable minimum. */
+.paper-body :is(th, td):not([colwidth]) {
+  @apply min-w-16;
+}
+
+.paper-body th {
+  @apply text-left font-semibold;
+  border-bottom: 1px solid var(--foreground);
+}
+
+.paper-body td {
+  border-bottom: 1px dashed var(--border);
+}
+
+.paper-body tr:last-child td {
+  border-bottom: none;
+}
+
+.paper-body th > p,
+.paper-body td > p {
+  margin: 0;
+}
+
+.paper-body .selectedCell::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0 bg-primary/10;
+}
+
+.paper-body .tableWrapper {
+  @apply overflow-x-auto;
+}
+
+/* The table holding the caret shows its invisible cell borders as dashed guides (screen only). */
+@media screen {
+  .paper-body .table-active > table > tbody > tr > :is(td, th) {
+    border-left: 1px dashed var(--table-guide);
+    border-right: 1px dashed var(--table-guide);
+  }
+
+  .paper-body .table-active > table > tbody > tr > td {
+    border-bottom-color: var(--table-guide);
+  }
+}
+
+/* Dragging cell borders: column widths (prosemirror-tables) and row heights (TableLayout) */
+.paper-body .column-resize-handle {
+  @apply pointer-events-none absolute -top-px -right-0.5 -bottom-px z-10 w-[3px] bg-primary;
+}
+
+.ProseMirror.resize-cursor {
+  cursor: col-resize;
+}
+
+.ProseMirror.row-resize-cursor {
+  cursor: row-resize;
+}
+
+.paper-body tr.row-resize-target > :is(td, th) {
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
+
+/* Selected atom nodes */
+.paper-body .ProseMirror-selectednode {
+  outline: none;
+}
+
+/* Comments */
+.comment-mark {
+  background: var(--comment-bg);
+  border-bottom: 2px solid oklch(0.8 0.15 90);
+  cursor: pointer;
+}
+
+/* Collaboration carets (TipTap CollaborationCaret) */
+.collaboration-carets__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid #0d0d0d;
+  border-right: 1px solid #0d0d0d;
+  word-break: normal;
+  pointer-events: none;
+}
+
+.collaboration-carets__label {
+  position: absolute;
+  top: -1.45em;
+  left: -1px;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px 4px 4px 0;
+  color: #fff;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.flash-highlight {
+  animation: flash-highlight 1.6s ease-out;
+}
+
+@keyframes flash-highlight {
+  0%,
+  30% {
+    background-color: var(--flash);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Page breaks on screen (Pagination extension): spacers before blocks and lines, space above table
+   rows and references. Left out while measuring the layout without them, and in print. */
+.paper-body .page-break {
+  @apply pointer-events-none m-0 hidden select-none;
+}
+
+@media screen {
+  .paper-page:not(.paginating) .paper-body .page-break {
+    @apply block;
+  }
+
+  /* Before a line: fills a line of its own, so the line before stays a wrapped (justified) line */
+  .paper-page:not(.paginating) .paper-body span.page-break {
+    @apply inline-block w-full align-top;
+  }
+
+  .paper-page:not(.paginating) tr.page-break-row > :is(td, th)::before {
+    content: "";
+    display: block;
+    height: var(--page-break);
+  }
+
+  .paper-page:not(.paginating) .paper-references > li {
+    padding-top: var(--page-break, 0px);
+  }
+}
+
+/* Print / PDF: only the paper itself, paginated by the browser with the page size and margins of the
+   screen pages (pageGeometry in lib/paper/page.ts; the workspace adds the document's size and margins with
+   pagePrintCss). Whatever takes space on screen takes it here too (controls inside the paper are
+   print:invisible), so that the pages break at the same places. */
+@media print {
+  @page {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+    }
+  }
+
+  .paper-page {
+    margin: 0;
+    width: auto !important;
+    min-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    transform: none !important;
+    /* Like the screen pages, which don't keep lines of a paragraph together */
+    orphans: 1;
+    widows: 1;
+  }
+
+  /* Absolutely positioned, so it escapes the article's clip when printing: past the paper edge (the
+     middle of a very wide equation) it would still shrink the paper. */
+  .katex .katex-mathml {
+    display: none;
+  }
+
+  .paper-body :is(h1, h2, h3),
+  .paper-references-title {
+    break-after: avoid;
+  }
+
+  /* Kept together like on screen, except tables taller than a page (split between rows there too) */
+  .paper-body :is(h1, h2, h3, pre, .equation-node, .figure-node, tr),
+  .paper-body :not(.page-split) > .table-figure,
+  .paper-references > li {
+    break-inside: avoid;
+  }
+
+  .comment-mark {
+    background: none;
+    border-bottom: none;
+  }
+
+  .collaboration-carets__caret,
+  .collaboration-carets__label {
+    display: none;
+  }
+
+  .paper-body .is-empty::before {
+    content: none;
+  }
+
+  .paper-body .appendix-break {
+    visibility: hidden;
+  }
+}
